@@ -15,6 +15,7 @@ namespace sjtu {
 template<class Key, class T, class Compare = std::less<Key>>
 class map {
     struct Node; // Forward declaration
+    class iterator; // Forward declaration for const_iterator
 
 public:
    /**
