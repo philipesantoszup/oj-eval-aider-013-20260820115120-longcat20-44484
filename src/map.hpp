@@ -15,6 +15,7 @@ namespace sjtu {
 template<class Key, class T, class Compare>
 class map {
     struct Node; // Forward declaration
+    class iterator; // Forward declaration of iterator
 
 public:
    /**
@@ -39,7 +40,7 @@ public:
    public:
        const_iterator() : container(nullptr), node(nullptr) {}
        const_iterator(const const_iterator &other) : container(other.container), node(other.node) {}
-       const_iterator(const class iterator &other);
+       const_iterator(const iterator &other);
 
        /**
     * TODO iter++
@@ -105,7 +106,7 @@ public:
            return node == rhs.node;
        }
 
-       bool operator==(const class iterator &rhs) const;
+       bool operator==(const iterator &rhs) const;
 
        /**
     * some other operator for iterator.
@@ -114,7 +115,7 @@ public:
            return node != rhs.node;
        }
 
-       bool operator!=(const class iterator &rhs) const;
+       bool operator!=(const iterator &rhs) const;
 
        /**
     * for the support of it->first.
